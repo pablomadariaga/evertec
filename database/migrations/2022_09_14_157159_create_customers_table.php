@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->comment('Table containing the customers of the store');
             $table->id()->comment('Unique customer identifier');
-            $table->string('name', 80)->comment("customer's full name");
+            $table->string('address')->comment("customer's address");
+            $table->string('first_name', 40)->comment("customer's first name");
+            $table->string('last_name', 40)->comment("customer's last name");
             $table->string('email')->unique()->comment("customer's email");
             $table->string('mobile',25)->unique()->comment("customer's mobile");
             $table->timestamps();
