@@ -1,3 +1,5 @@
 *
 !public/
+!evertec/
+!evertec/*
 !.gitignore
