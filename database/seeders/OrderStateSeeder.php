@@ -18,7 +18,7 @@ class OrderStateSeeder extends Seeder
         $date = now();
         OrderState::insert([
             [
-                'description' => '“CREATED',
+                'description' => 'CREATED',
                 'created_at' => $date,
                 'updated_at' => $date
             ],
@@ -29,6 +29,11 @@ class OrderStateSeeder extends Seeder
             ],
             [
                 'description' => 'REJECTED',
+                'created_at' => $date,
+                'updated_at' => $date
+            ],
+            [
+                'description' => 'PENDING',
                 'created_at' => $date,
                 'updated_at' => $date
             ]

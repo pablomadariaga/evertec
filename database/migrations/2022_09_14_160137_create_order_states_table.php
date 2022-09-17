@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('order_states', function (Blueprint $table) {
             $table->comment('Table containing the states of the orders in the store');
-            $table->id()->comment('Unique order states identifier');
+            $table->id()->comment('Unique order states identifier: 1=CREATED, 2=PAYED, 3=REJECTED');
             $table->string('description')->unique()->comment('Order state description');
             $table->timestamps();
         });

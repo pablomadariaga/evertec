@@ -17,7 +17,9 @@ class CustomerFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'address' => fake()->address(),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'mobile' => fake()->unique()->phoneNumber()
         ];
