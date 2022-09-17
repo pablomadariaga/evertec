@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+
+Route::resource('order',OrderController::class);
+Route::get('order/{id}/payment',[OrderController::class, 'paymentResult'])->name('order.payment');
+
+// Route::get('order/create', [OrderController::class, 'create'])->name('create-order');
+// Route::post('order/create', [OrderController::class, 'create'])->name('create-order');
+

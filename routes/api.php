@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\OrderApiController;
+use App\Http\Controllers\Api\ProductApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+$basePathOrders = 'order';
+Route::get($basePathOrders, [OrderApiController::class, 'index']);
+Route::get("$basePathOrders/{id}", [OrderApiController::class, 'show']);
+Route::post($basePathOrders, [OrderApiController::class, 'getCheckout']);
+Route::put("$basePathOrders/{id}", [OrderApiController::class, 'update']);
+
+Route::get("products", [ProductApiController::class, 'index']);
+Route::get("products/{id}", [ProductApiController::class, 'show']);
