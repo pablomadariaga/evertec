@@ -24,4 +24,15 @@ return [
     */
 
     'secret' => env('PLACETOPAY_SECRET_KEY',null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Service Base URL
+    |--------------------------------------------------------------------------
+    | This option allows you to specify the Base URL of the service for integration
+    | with Placetopay, you must configure the url in the environment file.
+    |
+    */
+
+    'base_url' => env('PLACETOPAY_BASE_URL',null),
 ];
