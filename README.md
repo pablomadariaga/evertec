@@ -1,4 +1,4 @@
-<p align="center"><a href="https://evertec.com" target="_blank"><img src="https://github.com/pablomadariaga/evertec/blob/17cf3bff3e8062aee923b2bbcdf659d461412dce/storage/app/evertec/logo_evertec.svg" width="400" alt="Evertec Logo"></a></p>
+<p align="center"><a href="https://www.evertecinc.com/" target="_blank"><img src="https://github.com/pablomadariaga/evertec/blob/17cf3bff3e8062aee923b2bbcdf659d461412dce/storage/app/evertec/logo_evertec.svg" width="400" alt="Evertec Logo"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
