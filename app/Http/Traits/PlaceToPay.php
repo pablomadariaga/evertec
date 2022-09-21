@@ -107,7 +107,7 @@ trait PlaceToPay
                 "description" => __('Evertec test purchase'),
                 "amount" => [
                     "currency" => "COP",
-                    "total" => $order->total
+                    "total" => $order->getRawOriginal('total')
                 ]
             ],
             "payer" => $person,
