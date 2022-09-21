@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('address')->comment("customer's address");
             $table->string('first_name', 40)->comment("customer's first name");
             $table->string('last_name', 40)->comment("customer's last name");
-            $table->string('email')->unique()->comment("customer's email");
-            $table->string('mobile',25)->unique()->comment("customer's mobile");
+            $table->string('email')->comment("customer's email");
+            $table->string('mobile',25)->comment("customer's mobile");
             $table->timestamps();
         });
     }
