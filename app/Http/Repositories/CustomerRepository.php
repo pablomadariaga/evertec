@@ -7,19 +7,25 @@ use App\Models\Customer;
 
 class CustomerRepository implements CustomerRepositoryInterface
 {
-    public function getAllCustomers()
-    {
-        return Customer::all();
+    protected Customer $model;
+
+    public function __construct(Customer $customer) {
+        $this->model = $customer;
     }
 
-    public function getCustomerById(int $CustomerId): Customer
+    public function getAllCustomers()
     {
-        return Customer::findOrFail($CustomerId);
+        return $this->model->all();
+    }
+
+    public function getCustomerById(int $customerId): Customer
+    {
+        return $this->model->findOrFail($customerId);
     }
 
     public function updateOrCreateCustomer(array $customerDetails): Customer
     {
         unset($customerDetails['product']);
-        return Customer::updateOrCreate($customerDetails);
+        return $this->model->updateOrCreate($customerDetails);
     }
 }

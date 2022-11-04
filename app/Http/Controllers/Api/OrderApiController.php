@@ -20,6 +20,13 @@ class OrderApiController extends BaseApiController
     private CustomerRepositoryInterface $customerRepository;
     private ProductRepositoryInterface $productRepository;
 
+    /**
+     * Order api controller construct
+     *
+     * @param OrderRepositoryInterface $orderRepository
+     * @param CustomerRepositoryInterface $customerRepository
+     * @param ProductRepositoryInterface $productRepository
+     */
     public function __construct(
         OrderRepositoryInterface $orderRepository,
         CustomerRepositoryInterface $customerRepository,
@@ -52,7 +59,7 @@ class OrderApiController extends BaseApiController
         $order = $this->orderRepository->getOrderById($request->input('id'));
         $response = $this->createSessionPtp($order);
         if ($response->status->status=="OK") {
-            $this->orderRepository->updateOrder($request->input('id'),[
+            $this->orderRepository->updateOrder($request->input('id'), [
                 'request_id' => $response->requestId,
                 'process_url' => $response->processUrl
             ]);

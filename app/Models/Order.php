@@ -76,11 +76,11 @@ class Order extends Model
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param int $orderStateId
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function scopeGetAllByOrderState($query,int $orderStateId)
+    public function scopeGetAllByOrderState($query, int $orderStateId)
     {
-        return $query->where('order_state_id', $orderStateId);
+        return $query->where('order_state_id', $orderStateId)->get();
     }
 
     /********************* Accessors & Mutators *********************/

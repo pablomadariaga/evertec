@@ -137,6 +137,6 @@ return [
         'mobile'                => 'móvil',
         'name'                  => 'nombre',
         'phone'                 => 'teléfono',
-        'product'               => 'product',
+        'product'               => 'producto',
     ],
 ];
