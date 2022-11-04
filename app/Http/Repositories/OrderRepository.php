@@ -8,19 +8,25 @@ use App\Models\Order;
 class OrderRepository implements OrderRepositoryInterface
 {
 
+    protected Order $model;
+
+    public function __construct(Order $order) {
+        $this->model = $order;
+    }
+
     public function getAllOrders()
     {
-        return Order::all();
+        return $this->model->all();
     }
 
     public function getOrderById(int $orderId): Order
     {
-        return Order::findOrFail($orderId);
+        return $this->model->findOrFail($orderId);
     }
 
     public function createOrder(array $orderDetails): Order
     {
-        $order = Order::create($orderDetails);
+        $order = $this->model->create($orderDetails);
         $order->orderDetails()->create([
             'product_id' => $orderDetails['product_id'],
         ]);
@@ -30,13 +36,13 @@ class OrderRepository implements OrderRepositoryInterface
 
     public function updateOrder(int $orderId, array $newDetails): Order
     {
-        $order = Order::find($orderId);
+        $order = $this->model->find($orderId);
         $order->update($newDetails);
         return $order;
     }
 
     public function getAllOrdersByOrderState(int $orderStateId)
     {
-        return Order::getAllByOrderState($orderStateId)->get();
+        return $this->model->getAllByOrderState($orderStateId);
     }
 }

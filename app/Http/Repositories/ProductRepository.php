@@ -7,13 +7,20 @@ use App\Models\Product;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-    public function getAllProducts()
+    protected Product $model;
+
+    public function __construct(Product $order)
     {
-        return Product::all();
+        $this->model = $order;
     }
 
-    public function getProductById(int $ProductId): Product
+    public function getAllProducts()
     {
-        return Product::findOrFail($ProductId);
+        return $this->model->all();
+    }
+
+    public function getProductById(int $productId): Product
+    {
+        return $this->model->findOrFail($productId);
     }
 }
